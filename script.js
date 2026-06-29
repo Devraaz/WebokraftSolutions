@@ -358,7 +358,7 @@ form.addEventListener("submit", function (e) {
   emailjs
     .sendForm("service_scilyap", "template_rxb7ltc", form)
     .then(() => {
-      alert("Message sent successfully!");
+      alert("Message sent successfully! We will contact you soon. ☺️");
 
       form.reset();
     })
@@ -368,5 +368,20 @@ form.addEventListener("submit", function (e) {
       alert("Something went wrong.");
     });
 });
+
+// Scroll reveal
+const reveals = document.querySelectorAll(".reveal");
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add("visible");
+        observer.unobserve(e.target);
+      }
+    });
+  },
+  { threshold: 0.1 },
+);
+reveals.forEach((el) => observer.observe(el));
 
 console.log("Webokraft Solutions - Premium Agency Website Loaded");

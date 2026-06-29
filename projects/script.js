@@ -2,19 +2,35 @@
 const portfolioItems = [
   {
     category: "ai",
-    image: "images/nearbyhire.png",
+    image: "../images/nearbyhire.png",
     type: "Job Portal",
     title: "AI Job Recommendation System",
     description: "Hassel Free Blue Colar Job Finding for local.",
     tags: [
-      { name: "ML", color: "bg-teal-50 text-[#00C2B2]" },
+      { name: "Django", color: "bg-emerald-100 text-emerald-700" },
       { name: "Deep Learning", color: "bg-purple-50 text-[#7B61FF]" },
+      { name: "ML", color: "bg-teal-50 text-[#00C2B2]" },
+      { name: "Next js", color: "bg-slate-100 text-slate-700" },
+    ],
+    gradient: "from-teal-100 to-purple-100",
+  },
+  {
+    category: "app",
+    image: "../images/construction site.png",
+    type: "Management System",
+    title: "Trip Management System",
+    description: "Control your vehicle Trip Managment .",
+    tags: [
+      { name: "React Native", color: "bg-teal-50 text-[#00C2B2]" },
+      { name: "DRF", color: "bg-green-100 text-green-700" },
+      { name: "Zustand", color: "bg-gray-100 text-gray-700" },
+      { name: "Sync Engine", color: "bg-purple-50 text-[#7B61FF]" },
     ],
     gradient: "from-teal-100 to-purple-100",
   },
   {
     category: "web",
-    image: "images/nikhil_acd.png",
+    image: "../images/nikhil_acd.png",
     type: "Academic Management System",
     title: "Complete Student Management Website",
     description:
@@ -28,7 +44,7 @@ const portfolioItems = [
   },
   {
     category: "web",
-    image: "images/parlour.png",
+    image: "../images/parlour.png",
     type: "Marketing Landing Page",
     title: "Beauty Parlour Website",
     description: "Full Fledge Premium Website with cool UI and animation. ",
@@ -41,7 +57,7 @@ const portfolioItems = [
   },
   {
     category: "desktop",
-    image: "images/cms sys.png",
+    image: "../images/cms sys.png",
     type: "Desktop App",
     title: "Clinical Management System",
     description: "Complete Pathology Clinic Software for Labs for Reporting.",
@@ -54,7 +70,7 @@ const portfolioItems = [
   },
   {
     category: "app",
-    image: "images/raj.png",
+    image: "../images/raj.png",
     type: "Mobile App",
     title: "Liquor Management System",
     description: "Improvise you operations and minimize you time.",
@@ -67,7 +83,7 @@ const portfolioItems = [
   },
   {
     category: "web",
-    image: "images/ecomm.png",
+    image: "../images/ecomm.png",
     type: "E commerce App",
     title: "Ecommerce System",
     description: "Complete ecommerece management sytem.",
@@ -78,38 +94,46 @@ const portfolioItems = [
     ],
     gradient: "from-green-100 to-blue-100",
   },
+  {
+    category: "web",
+    image: "../images/kinder.png",
+    type: "Academic Website",
+    title: "Kids Play School",
+    description: "A short beautiful Landing page.",
+    tags: [
+      { name: "Wordpress", color: "bg-cyan-50 text-cyan-600" },
+      { name: "Elementor Pro", color: "bg-purple-50 text-purple-600" },
+      { name: "Lenis", color: "bg-emerald-50 text-emerald-600" },
+    ],
+    gradient: "from-green-100 to-blue-100",
+  },
+  {
+    category: "web",
+    image: "../images/mm beauty.png",
+    type: "Spa & Parlour ",
+    title: "Rose Radiance Beauty Saloon",
+    description: "A professional Website for a professional Business.",
+    tags: [
+      { name: "Wordpress", color: "bg-orange-50 text-orange-600" },
+      { name: "AI", color: "bg-emerald-50 text-emerald-600" },
+      { name: "Three js", color: "bg-purple-50 text-purple-600" },
+    ],
+    gradient: "from-green-100 to-blue-100",
+  },
+  {
+    category: "web",
+    image: "../images/nikhil ACD.png",
+    type: "Lead Collection Engine",
+    title: "Lead Collection System ",
+    description: "Get the best out of a website (Your Future Clients).",
+    tags: [
+      { name: "React Native", color: "bg-purple-50 text-purple-600" },
+      { name: "Custom Code", color: "bg-cyan-50 text-cyan-600" },
+      { name: "AI", color: "bg-emerald-50 text-emerald-600" },
+    ],
+    gradient: "from-green-100 to-blue-100",
+  },
 ];
-
-const testimonials = [
-  {
-    name: "Satya Narayan Pradhan",
-    designation: "Center Coordinator, Nikhil Academy",
-    image: "logo.png",
-    rating: 5,
-    review:
-      "Outstanding, exceeding my expectations every time. Efficiency and punctuality are hallmarks of their service..",
-  },
-
-  {
-    name: "Vivek Singh",
-    designation: "Manager, RAJ Residency",
-    image: "logo.png",
-    rating: 5,
-    review:
-      "The professionalism and technical expertise of Webokraft Solutions were evident throughout the process. They understood my requirements clearly, provided timely updates, and delivered a solution that exceeded expectations. Their commitment to quality and customer satisfaction is commendable..",
-  },
-
-  {
-    name: "Ajay Kumar",
-    designation: "Owner, Subhashree Clinic",
-    image: "logo.png",
-    rating: 5,
-    review:
-      "Best agency we've worked with. Technical excellence, strategic thinking, and they actually deliver on time.",
-  },
-];
-
-// Portfolio
 
 const portfolioGrid = document.getElementById("portfolioGrid");
 
@@ -176,79 +200,3 @@ function renderPortfolio(items) {
 }
 
 renderPortfolio(portfolioItems);
-
-// Testimonials
-
-const testimonialTrack = document.getElementById("testimonialTrack");
-const testimonialDots = document.getElementById("testimonialDots");
-
-function renderTestimonials() {
-  const itemsPerPage = 3;
-  const totalPages = Math.ceil(testimonials.length / itemsPerPage);
-
-  testimonialTrack.innerHTML = "";
-  testimonialDots.innerHTML = "";
-
-  testimonials.forEach((item) => {
-    const stars = Array.from(
-      { length: item.rating },
-      () => `
-            <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-            </svg>
-        `,
-    ).join("");
-
-    testimonialTrack.innerHTML += `
-          <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-3">
-
-              <div class="bg-[#F7F9FA] rounded-3xl p-8 h-full">
-
-                  <div class="flex gap-1 mb-4">
-                      ${stars}
-                  </div>
-
-                  <p class="text-gray-700 mb-6 leading-relaxed">
-                      "${item.review}"
-                  </p>
-
-                  <div class="flex items-center gap-3">
-
-                      <img
-                          src="${item.image}"
-                          alt="${item.name}"
-                          class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-md"
-                      >
-
-                      <div>
-
-                          <div class="font-bold text-gray-900">
-                              ${item.name}
-                          </div>
-
-                          <div class="text-sm text-gray-600">
-                              ${item.designation}
-                          </div>
-
-                      </div>
-
-                  </div>
-
-              </div>
-
-          </div>
-      `;
-  });
-
-  // Render page dots
-  for (let page = 0; page < totalPages; page++) {
-    testimonialDots.innerHTML += `
-        <button
-          class="testimonial-dot w-2 h-2 rounded-full bg-gray-300 transition-all"
-          data-page="${page}">
-        </button>
-      `;
-  }
-}
-
-renderTestimonials();
