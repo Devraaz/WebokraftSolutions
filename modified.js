@@ -66,17 +66,18 @@ const portfolioItems = [
     gradient: "from-green-100 to-blue-100",
   },
   {
-    category: "web",
-    image: "images/ecomm.png",
-    type: "E commerce App",
-    title: "Ecommerce System",
-    description: "Complete ecommerece management sytem.",
+    category: "app",
+    image: "../images/construction site.png",
+    type: "Management System",
+    title: "Trip Management System",
+    description: "Control your vehicle Trip Managment .",
     tags: [
-      { name: "API", color: "bg-cyan-50 text-cyan-600" },
-      { name: "React Native", color: "bg-purple-50 text-purple-600" },
-      { name: "Django", color: "bg-emerald-50 text-emerald-600" },
+      { name: "React Native", color: "bg-teal-50 text-[#00C2B2]" },
+      { name: "DRF", color: "bg-green-100 text-green-700" },
+      { name: "Zustand", color: "bg-gray-100 text-gray-700" },
+      { name: "Sync Engine", color: "bg-purple-50 text-[#7B61FF]" },
     ],
-    gradient: "from-green-100 to-blue-100",
+    gradient: "from-teal-100 to-purple-100",
   },
 ];
 
